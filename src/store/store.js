@@ -1,5 +1,6 @@
 import { createStore } from 'vuex';
 import cartMutations from './cart/cartMutations';
+import cartActions from './cart/cartActions';
 
 const store = createStore({
   state() {
@@ -37,7 +38,9 @@ const store = createStore({
     };
   },
 
-  mutations
+  mutations: cartMutations,
+
+  actions: cartActions
 });
 
 export default store;

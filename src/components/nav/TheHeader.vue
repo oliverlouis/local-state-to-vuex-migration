@@ -18,15 +18,24 @@
       </ul>
     </nav>
     <div>
-      <button v-if="!isLoggedIn" @click="login">Login</button>
-      <button v-if="isLoggedIn" @click="logout">Logout</button>
+      <button v-if="!isLoggedIn" @click="logIn">Login</button>
+      <button v-if="isLoggedIn" @click="logOut">Logout</button>
     </div>
   </header>
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex';
 export default {
-  inject: ['isLoggedIn', 'login', 'logout', 'cart'],
+  // inject: ['isLoggedIn', 'login', 'logout', 'cart'],
+
+  computed: {
+    ...mapState(['isLoggedIn', 'cart'])
+  },
+
+  methods: {
+    ...mapActions(['logIn', 'logOut'])
+  }
 };
 </script>
 
