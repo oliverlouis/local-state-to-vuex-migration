@@ -1,9 +1,9 @@
 export default {
-  logIn(context) {
+  login(context) {
     context.commit('login');
   },
 
-  logOut(context) {
+  logout(context) {
     context.commit('logout');
   }
 };

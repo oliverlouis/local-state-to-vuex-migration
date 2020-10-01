@@ -1,11 +1,15 @@
 import { createStore } from 'vuex';
 import cartMutations from './cart/cartMutations';
 import cartActions from './cart/cartActions';
+import authState from './auth/authState';
 
 const store = createStore({
+  modules: {
+    auth: authState
+  },
+
   state() {
     return {
-      isLoggedIn: false,
       products: [
         {
           id: 'p1',
